@@ -10,8 +10,7 @@ public class Main {
             System.out.println("Ваша задача угадать число!");
             System.out.println("Введите верхную границу");
             int range = scanner.nextInt();
-            int number = (int) (Math.random() * range);
-            PlayLevel(range, number);
+            PlayLevel(range);
             System.out.println("Введите 1 чтобы сыграть еще");
             int again = scanner.nextInt();
             if (again != 1) {
@@ -20,7 +19,8 @@ public class Main {
         }
         scanner.close();
     }
-    private static void PlayLevel (int range, int number){
+    private static void PlayLevel (int range){
+        int number = (int) (Math.random() * range);
         while (true) {
             System.out.println("Угадайте число от 0 до " + range);
             int input_number = scanner.nextInt();
