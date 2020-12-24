@@ -14,6 +14,7 @@ public class GameWindow extends JFrame {
     private static float drop_left = 200;
     private static float drop_top = -100;
     private static float drop_v = 200;
+    private static float drop_vx = 200;
 
     public static void main(String[] args) throws IOException {
         backGround= ImageIO.read(GameWindow.class.getResourceAsStream("BackGround1.jpg"));
@@ -33,7 +34,8 @@ public class GameWindow extends JFrame {
         long current_time = System.nanoTime();
         float delta_time = (current_time-last_frame_time) * 0.000000001f;
         last_frame_time = current_time;
-        drop_top = drop_top + drop_v *delta_time;
+        drop_top = drop_top + drop_v * delta_time;
+        drop_left = drop_left + drop_vx * delta_time;
         g.drawImage(backGround,0,0,null);
         g.drawImage(drop,(int) drop_left,(int) drop_top,null);
         //g.drawImage(gameOver,280,120,null);
