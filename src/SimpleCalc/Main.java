@@ -1,4 +1,4 @@
-package MystudyJava;
+package SimpleCalc;
 
 import java.util.Scanner;
 
