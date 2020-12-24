@@ -16,7 +16,6 @@ public class GameWindow extends JFrame {
     private static float drop_left = 200;
     private static float drop_top = -100;
     private static float drop_v = 200;
-    private static float drop_vx = 200;
     private static int score = 0;
 
     public static void main(String[] args) throws IOException {
@@ -41,7 +40,7 @@ public class GameWindow extends JFrame {
                 boolean is_drop = x >= drop_left && x <= drop_right && y <= drop_bottom && y >= drop_top;
                 if(is_drop){
                     drop_top = -100;
-                    drop_left = (int)(Math.random() * (game_Field.getWidth()) - drop.getWidth(null));
+                    drop_left = (int)(Math.random() * ((game_Field.getWidth()) - drop.getWidth(null)));
                     drop_v = drop_v + 20;
                     score += 1;
                     game_window.setTitle("Score = " + score);
